@@ -12,6 +12,7 @@ function displayBooks() {
     const book = document.createElement('li');
     book.innerHTML = `<span class="title">'${books[i].title}' by ${books[i].author}</span>  `;
     const btn = document.createElement('button');
+    btn.className = 'list-btn';
     const hrLine = document.createElement('hr');
     btn.textContent = 'Remove';
     book.append(btn);
