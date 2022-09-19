@@ -25,25 +25,15 @@ function displayBooks() {
       displayBooks();
     };
     booksContainer.append(book);
-  
-    }
-};
+  }
+}
 
 function addBook(title, author) {
-    books.push({ title, author });
-    displayBooks();
-  }
-  
-  document.forms[0].onsubmit = (event) => {
-    event.preventDefault();
-    const thisForm = event.target;
-    const title = thisForm[0].value;
-    const author = thisForm[1].value;
-    addBook(title, author);
-    window.localStorage.setItem('books', JSON.stringify(books));
-  };
+  books.push({ title, author });
+  displayBooks();
+}
 
-  window.onload = () => {
+window.onload = () => {
   if (localStorage.getItem('books')) {
     books = JSON.parse(localStorage.getItem('books'));
   }
