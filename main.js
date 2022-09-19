@@ -2,8 +2,8 @@ let books = [];
 
 const booksContainer = document.getElementById('books-cont');
 function removeBook(index) {
-  window.localStorage.setItem('books', JSON.stringify(books));
   books.splice(index, 1);
+  window.localStorage.setItem('books', JSON.stringify(books));
 }
 
 function displayBooks() {
