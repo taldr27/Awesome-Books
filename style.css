@@ -1,0 +1,13 @@
+body {
+  box-sizing: border-box;
+  width: 80%;
+}
+
+ul {
+  list-style: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
