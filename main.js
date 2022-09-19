@@ -10,12 +10,12 @@ function displayBooks() {
   booksContainer.innerHTML = '';
   for (let i = 0; i < books.length; i += 1) {
     const book = document.createElement('li');
-    book.innerHTML = `<span class="title">${books[i].title}</span> <br> ${books[i].author} <br>`;
+    book.innerHTML = `<span class="title">'${books[i].title}' by ${books[i].author}</span>  `;
     const btn = document.createElement('button');
     const hrLine = document.createElement('hr');
     btn.textContent = 'Remove';
     book.append(btn);
-    book.append(hrLine);
+    booksContainer.append(hrLine);
     btn.onclick = () => {
       removeBook(i);
       displayBooks();
@@ -34,6 +34,7 @@ document.forms[0].onsubmit = (event) => {
   const thisForm = event.target;
   const title = thisForm[0].value;
   const author = thisForm[1].value;
+
   addBook(title, author);
   window.localStorage.setItem('books', JSON.stringify(books));
 };
@@ -42,6 +43,5 @@ window.onload = () => {
   if (localStorage.getItem('books')) {
     books = JSON.parse(localStorage.getItem('books'));
   }
-
   displayBooks();
 };
