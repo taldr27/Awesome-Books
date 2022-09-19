@@ -32,11 +32,14 @@ function addBook(title, author) {
 
 document.forms[0].onsubmit = (event) => {
   event.preventDefault();
+
   const thisForm = event.target;
   const title = thisForm[0].value;
   const author = thisForm[1].value;
 
   addBook(title, author);
+  thisForm[0].value = '';
+  thisForm[1].value = '';
   window.localStorage.setItem('books', JSON.stringify(books));
 };
 
