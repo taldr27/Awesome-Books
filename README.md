@@ -2,7 +2,7 @@
 
 # Awesome Books
 
-> This project is about add and delete books with JS.
+> This project is about refactoring the javascript.
 
 ## Built With
 
