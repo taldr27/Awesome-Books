@@ -1,13 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
+  margin-top: 10em;
   box-sizing: border-box;
-  width: 80%;
+  display: flex;
+  justify-content: center;
 }
 
 ul {
   list-style: none;
 }
 
+li {
+  display: flex;
+  margin-block: 0.5em;
+  justify-content: space-between;
+  margin-inline: 2.5em;
+  font-weight: 700;
+}
+
 form {
   display: flex;
   flex-direction: column;
+}
+
+.div-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  border: 3px solid black;
+  width: 100%;
+  min-height: 3em;
+  height: 100%;
+  margin-bottom: 2em;
+}
+
+.input {
+  margin-block: 0.5em;
+  padding: 0.5em;
+  border: 2px solid black;
+}
+
+.list-btn {
+  justify-content: center;
+  align-self: center;
+  border: 4px solid black;
+  padding: 0.3em;
+  padding-inline: 1em;
+}
+
+button {
+  align-self: flex-end;
 }
