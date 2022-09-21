@@ -1,5 +1,4 @@
 const booksContainer = document.getElementById('books-cont');
-
 class Collect {
   constructor() {
     this.books = [];
@@ -56,3 +55,29 @@ document.forms[0].onsubmit = (event) => {
   }
   window.localStorage.setItem('books', JSON.stringify(books));
 };
+// function save() {
+//   if (localStorage.getItem('books')) {
+//     books = JSON.parse(localStorage.getItem('books'));
+//     console.log(localStorage);
+//   }
+//   books.displayBooks();
+// }
+// window.onload = save();
+
+// window.onload = () => {
+//   if (localStorage.getItem('books')) {
+//     books = JSON.parse(localStorage.getItem('books'));
+//   }
+
+//   displayBooks();
+// };
+
+
+// Setting Time
+function refreshTime() {
+  const timeDisplay = document.getElementById('time');
+  const dateString = new Date().toLocaleString();
+  const formattedString = dateString.replace(', ', ' - ');
+  timeDisplay.textContent = formattedString;
+}
+setInterval(refreshTime, 1);
