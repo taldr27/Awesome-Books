@@ -44,7 +44,6 @@ form {
 }
 
 .navBar {
-  border: 1px solid black;
   display: flex;
   margin-block: 1em;
   border: 3px solid black;
@@ -64,7 +63,9 @@ form {
   max-width: 5em;
 }
 
-.navBar span, .navbar li, footer span {
+footer span,
+.navBar span,
+.navbar li {
   margin-inline: 3em;
 }
 
@@ -113,7 +114,6 @@ button {
 }
 
 footer {
-  border: 1px solid black;
   display: flex;
   margin-block: 1em;
   border: 3px solid black;

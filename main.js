@@ -1,5 +1,27 @@
-let books = [];
+// Interact with styles
+const divList = document.getElementById('div-container');
+const formSection = document.getElementById('form-section');
+const contact = document.getElementById('contact');
 
+document.getElementById('addNav').addEventListener('click', () => {
+  divList.style.display = 'none';
+  formSection.style.display = 'block';
+  contact.style.display = 'none';
+});
+
+document.getElementById('listNav').addEventListener('click', () => {
+  divList.style.display = 'flex';
+  formSection.style.display = 'none';
+  contact.style.display = 'none';
+});
+
+document.getElementById('contactNav').addEventListener('click', () => {
+  divList.style.display = 'none';
+  formSection.style.display = 'none';
+  contact.style.display = 'block';
+});
+
+let books = [];
 const booksContainer = document.getElementById('books-cont');
 function removeBook(index) {
   books.splice(index, 1);
@@ -57,30 +79,6 @@ window.onload = () => {
 
   displayBooks();
 };
-
-// Interact with styles
-const divList = document.getElementById('div-container');
-const formSection = document.getElementById('form-section');
-const contact = document.getElementById('contact');
-
-
-document.getElementById('addNav').addEventListener('click', () => {
-  divList.style.display = 'none';
-  formSection.style.display = 'block';
-  contact.style.display = 'none';
-});
-
-document.getElementById('listNav').addEventListener('click', () => {
-  divList.style.display = 'flex';
-  formSection.style.display = 'none';
-  contact.style.display = 'none';
-});
-
-document.getElementById('contactNav').addEventListener('click', () => {
-  divList.style.display = 'none';
-  formSection.style.display = 'none';
-  contact.style.display = 'block';
-});
 
 function refreshTime() {
   const timeDisplay = document.getElementById('time');
