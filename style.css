@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   justify-content: center;
   font-weight: 700;
+  align-items: center;
 }
 
 a {
@@ -31,6 +32,15 @@ li {
 form {
   display: flex;
   flex-direction: column;
+}
+
+.form-section {
+  display: none;
+  min-width: 30%;
+}
+
+.contact {
+  display: none;
 }
 
 .navBar {

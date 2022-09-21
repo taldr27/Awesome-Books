@@ -11,30 +11,42 @@
     <nav class="navBar">
         <span>Awesome Books</span>
         <ul class="nav-list">
-            <li><a href="">List</a></li>
-            <li><a href="">Add New</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a id="listNav">List</a></li>
+            <li><a id="addNav" >Add New</a></li>
+            <li><a id="contactNav">Contact</a></li>
         </ul>
     </nav>
     <div class="time">
         <span id='time'></span>
     </div>
-    <div class="div-container">
+    <div id="div-container" class="div-container">
         <h1>All awesome books</h1>
         <section class="list">
             <ul class="books-container" id="books-cont">
     
             </ul>
         </section>
-        <h2>Add a new book</h2>
-        <section id="form-section">
-            <form>
-            <input id="input" class="input" name="title" type="text" autocomplete="off" placeholder="Add Title">
-            <input id="input" class="input" name="author" type="text" autocomplete="off" placeholder="Add Author">
-            <button id="add-book" type="submit">Add</button>
-            </form>
-        </section>
+        
     </div>
+    <section class="form-section" id="form-section">
+        <h2>Add a new book</h2>
+        <form>
+        <input id="input" class="input" name="title" type="text" autocomplete="off" placeholder="Add Title">
+        <input id="input" class="input" name="author" type="text" autocomplete="off" placeholder="Add Author">
+        <button id="add-book" type="submit">Add</button>
+        </form>
+    </section>
+    <section class="contact" id="contact">
+        <h2>Contact Information</h2>
+        <p>Do have any questions or you just want to say "Hello"?</p>
+        <span>You can reach out to us!</span>
+
+        <ul>
+            <li>Our e-mail: mail@mail.com</li>
+            <li>Our phone number: 0043586534422</li>
+            <li>Our address: Streetname 22m 84503 City, Country</li>
+        </ul>
+    </section>
     <footer class="footer">
         <span>Copyright 2022</span>
     </footer>  
