@@ -4,10 +4,17 @@
 }
 
 body {
-  margin-top: 10em;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  font-weight: 700;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -19,12 +26,55 @@ li {
   margin-block: 0.5em;
   justify-content: space-between;
   margin-inline: 2.5em;
-  font-weight: 700;
+  align-items: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
+}
+
+.form-section {
+  display: none;
+  min-width: 30%;
+}
+
+.contact {
+  display: none;
+}
+
+.navBar {
+  display: flex;
+  margin-block: 1em;
+  border: 3px solid black;
+  min-width: 95%;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  height: 2em;
+}
+
+.nav-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nav-list li {
+  max-width: 5em;
+}
+
+footer span,
+.navBar span,
+.navbar li {
+  margin-inline: 3em;
+}
+
+.time {
+  align-self: flex-end;
+  justify-self: end;
+  position: relative;
+  right: 2.2em;
+  margin-top: -1em;
 }
 
 .div-container {
@@ -34,6 +84,7 @@ form {
   width: 50%;
   align-items: center;
   justify-content: center;
+  align-self: center;
 }
 
 .list {
@@ -60,4 +111,15 @@ form {
 
 button {
   align-self: flex-end;
+}
+
+footer {
+  display: flex;
+  margin-block: 1em;
+  border: 3px solid black;
+  min-width: 95%;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  height: 2em;
 }

@@ -1,41 +1,56 @@
+// Interact with styles
+const divList = document.getElementById('div-container');
+const formSection = document.getElementById('form-section');
+const contact = document.getElementById('contact');
+
+document.getElementById('addNav').addEventListener('click', () => {
+  divList.style.display = 'none';
+  formSection.style.display = 'block';
+  contact.style.display = 'none';
+});
+
+document.getElementById('listNav').addEventListener('click', () => {
+  divList.style.display = 'flex';
+  formSection.style.display = 'none';
+  contact.style.display = 'none';
+});
+
+document.getElementById('contactNav').addEventListener('click', () => {
+  divList.style.display = 'none';
+  formSection.style.display = 'none';
+  contact.style.display = 'block';
+});
+
+let books = [];
 const booksContainer = document.getElementById('books-cont');
+function removeBook(index) {
+  books.splice(index, 1);
+  window.localStorage.setItem('books', JSON.stringify(books));
+}
 
-class Collect {
-  constructor() {
-    this.books = [];
-  }
-
-  removeBook(index) {
-    this.books.splice(index, 1);
-    window.localStorage.setItem('books', JSON.stringify(this.books));
-  }
-
-  displayBooks() {
-    booksContainer.innerHTML = '';
-    for (let i = 0; i < this.books.length; i += 1) {
-      const book = document.createElement('li');
-      book.innerHTML = `<span class="title">'${this.books[i].title}' by ${this.books[i].author}</span>`;
-      const btn = document.createElement('button');
-      btn.className = 'list-btn';
-      const hrLine = document.createElement('hr');
-      btn.textContent = 'Remove';
-      book.append(btn);
-      booksContainer.append(hrLine);
-      btn.onclick = () => {
-        this.removeBook(i);
-        this.displayBooks();
-      };
-      booksContainer.append(book);
-    }
-  }
-
-  addBook(title, author) {
-    this.books.push({ title, author });
-    this.displayBooks();
+function displayBooks() {
+  booksContainer.innerHTML = '';
+  for (let i = 0; i < books.length; i += 1) {
+    const book = document.createElement('li');
+    book.innerHTML = `<span class="title">'${books[i].title}' by ${books[i].author}</span>`;
+    const btn = document.createElement('button');
+    btn.className = 'list-btn';
+    const hrLine = document.createElement('hr');
+    btn.textContent = 'Remove';
+    book.append(btn);
+    booksContainer.append(hrLine);
+    btn.onclick = () => {
+      removeBook(i);
+      displayBooks();
+    };
+    booksContainer.append(book);
   }
 }
 
-const books = new Collect();
+function addBook(title, author) {
+  books.push({ title, author });
+  displayBooks();
+}
 
 document.forms[0].onsubmit = (event) => {
   event.preventDefault();
@@ -50,9 +65,25 @@ document.forms[0].onsubmit = (event) => {
     section.insertAdjacentElement('afterend', message);
     setTimeout(() => { message.remove(); }, 3000);
   } else {
-    books.addBook(title, author);
+    addBook(title, author);
     thisForm[0].value = '';
     thisForm[1].value = '';
   }
   window.localStorage.setItem('books', JSON.stringify(books));
 };
+
+window.onload = () => {
+  if (localStorage.getItem('books')) {
+    books = JSON.parse(localStorage.getItem('books'));
+  }
+
+  displayBooks();
+};
+
+function refreshTime() {
+  const timeDisplay = document.getElementById('time');
+  const dateString = new Date().toLocaleString();
+  const formattedString = dateString.replace(', ', ' - ');
+  timeDisplay.textContent = formattedString;
+}
+setInterval(refreshTime, 1);
